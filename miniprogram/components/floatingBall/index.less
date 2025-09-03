@@ -1,0 +1,85 @@
+/* 浮动球组件样式 */
+.movable-area {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 99;
+}
+
+.movable-view {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease-out, opacity 0.2s ease;
+}
+
+.float-ball {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #67C090 0%, #8CD4AC 100%);
+  box-shadow: 0 6px 20px rgba(7, 193, 96, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  will-change: transform;
+}
+
+.float-ball.dragging {
+  transform: scale(0.85);
+  box-shadow: 0 8px 25px rgba(7, 193, 96, 0.4);
+}
+
+.icon {
+  width: 50rpx;
+  height: 50rpx;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
+}
+
+.float-ball.dragging .icon {
+  transform: scale(0.9);
+}
+
+/* 动画效果 */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes magnetic {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.float-ball.animate {
+  animation: pulse 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* 边缘吸附时的磁吸效果 */
+.magnetic-effect {
+  animation: magnetic 0.3s ease;
+}

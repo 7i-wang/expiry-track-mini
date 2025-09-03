@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="logo-box flex-column-center">
+    <text>囤 · 物</text>
+    <text>优雅管理物品保质期</text>
+  </view>
+  <card class="urgent-card" title="即将到期" icon="/images/icons/clock.svg">
+    <view class="urgent-content">
+      <view wx:for="{{expiryList}}" wx:key="id" class="urgent-item flex-between-center">
+        <view class="info-box flex-center">
+          <image src="{{item.imageUrls[0]}}" mode="aspectFill" />
+          <view class="flex flex-col text-info">
+            <text>{{item.name}}</text>
+            <text>{{item.categoryText}}</text>
+          </view>
+        </view>
+        <view class="status-text">{{item.statusText}}</view>
+      </view>
+    </view>
+  </card>
+  <category-scroll bind:change="onTabChange"></category-scroll>
+  <card class="goods-card" title="全部物品" icon="/images/icons/open-box.svg">
+    <view wx:for="{{showList}}" wx:key="id" class="goods-item flex-between-center">
+      <view class="info-box flex-center">
+        <image src="{{item.imageUrls[0]}}" mode="aspectFill" />
+        <view class="flex flex-col text-info">
+          <text>{{item.name}}</text>
+          <text>{{item.categoryText}}</text>
+        </view>
+      </view>
+      <view class="status-text {{item.status == 'warning' && 'warning-text'}} {{item.status == 'expired' && 'expired-text'}}">{{item.statusText}}</view>
+    </view>
+  </card>
+  <floating-ball id="float-ball" iconPath="/images/icons/plus.svg" adsorbThreshold="{{20}}" bindtap="handleAdd">
+  </floating-ball>
+  <add-goods-popup isPopupShow="{{showPopup}}" bind:cancel="onPopupCancel" bind:add="onAddItem"></add-goods-popup>
+</view>

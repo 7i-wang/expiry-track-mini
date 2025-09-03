@@ -1,0 +1,7 @@
+<view class="card-comp">
+  <view class="title-box flex items-center">
+    <image src="{{icon}}" mode="" />
+    <text>{{title}}</text>
+  </view>
+  <slot></slot>
+</view>

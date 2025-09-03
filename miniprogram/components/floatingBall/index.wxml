@@ -1,0 +1,8 @@
+<!-- 浮动球组件 -->
+<movable-area class="movable-area">
+  <movable-view class="movable-view" style="width: {{size}}px; height: {{size}}px; {{customStyle}}; opacity: {{opacity}};" direction="all" damping="100" friction="0.5" x="{{x}}" y="{{y}}" disabled="{{disabled}}" out-of-bounds="{{false}}" bindchange="onChange" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd" bindtap="onTap">
+    <view class="float-ball {{isDragging ? 'dragging' : ''}} {{animationData ? 'animate' : ''}}">
+      <image class="icon" src="{{iconPath}}" mode="aspectFit"></image>
+    </view>
+  </movable-view>
+</movable-area>

@@ -1,0 +1,26 @@
+.category-scroll-comp{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 20rpx;
+  overflow-x: auto;
+  margin: 48rpx 0;
+  .list-item{
+    width: 160rpx;
+    height: 160rpx;
+    padding: 24rpx;
+    font-size: 28rpx;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(103, 192, 144, 0.2);
+    border-radius: 32rpx;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    >image{
+      width: 40rpx;
+      height: 40rpx;
+      margin-bottom: 16rpx;
+    }
+    >text{
+      letter-spacing: 2px;
+    }
+  }
+}

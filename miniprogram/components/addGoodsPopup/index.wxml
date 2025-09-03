@@ -1,0 +1,41 @@
+<view class="popup-container flex-center" wx:if="{{isPopupShow}}">
+  <view class="popup-content">
+    <view class="title flex-column-center">
+      <text>添加新物品</text>
+      <text>记录物品信息，设置提醒</text>
+    </view>
+    <view class="content-box">
+      <view class="input-item">
+        <text>物品名称</text>
+        <input placeholder="例如：纯牛奶、面膜" value="{{formData.name}}" bindinput="onChange" data-type="name" />
+      </view>
+      <view class="input-item">
+        <text>物品分类</text>
+        <picker mode="selector" range="{{categoryOptions}}" range-key="label" value="{{categoryIndex}}" bindchange="onChange" data-type="category">
+          {{categoryOptions[categoryIndex].label || '选择分类'}}
+        </picker>
+      </view>
+      <view class="input-item">
+        <text>保质期至</text>
+        <picker mode="date" start="{{minDate}}" value="{{formData.expiryDate}}" bindchange="onChange" data-type="expiryDate">
+          {{formData.expiryDate || '年 / 月 / 日'}}
+        </picker>
+      </view>
+      <view class="input-item">
+        <text>提醒时间</text>
+        <picker mode="selector" range="{{reminderTimeOptions}}" range-key="label" value="{{reminderTimeIndex}}" bindchange="onChange" data-type="reminderTime">
+          {{reminderTimeOptions[reminderTimeIndex].label ||
+      '默认（根据分类自动设置）'}}
+        </picker>
+      </view>
+      <view class="input-item">
+        <text>图片</text>
+        <upload-image count="{{1}}" fileList="{{formData.file}}" bind:fileChange="fileChange"></upload-image>
+      </view>
+    </view>
+    <view class="button-box">
+      <view class="cancel-btn" bindtap="onCancel">取消</view>
+      <view class="confirm-btn" bindtap="onAddItem">添加物品</view>
+    </view>
+  </view>
+</view>

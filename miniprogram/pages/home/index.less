@@ -1,0 +1,116 @@
+.container {
+  padding: 16rpx;
+
+  .logo-box {
+    margin: 16rpx 0 60rpx;
+
+    >text:first-child {
+      font-size: 64rpx;
+      color: #2D3748;
+      letter-spacing: 2px;
+      margin-bottom: 16rpx;
+    }
+
+    >text:last-child {
+      font-size: 30rpx;
+      color: #67C090;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .urgent-card {
+    .card-comp {
+      background: linear-gradient(135deg, #FFF5F5 0%, #FFFCFC 100%);
+      border: 1px solid rgba(255, 107, 107, 0.15);
+    }
+
+    .urgent-content {
+      max-height: 300rpx;
+      overflow-y: auto;
+
+      .urgent-item {
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(255, 107, 107, 0.1);
+
+        .info-box {
+          >image {
+            width: 100rpx;
+            height: 100rpx;
+            border-radius: 24rpx;
+            margin-right: 20rpx;
+          }
+
+          .text-info {
+            >text:first-child {
+              font-size: 32rpx;
+              font-weight: 500;
+              color: #2D3748;
+              margin-bottom: 4px;
+            }
+
+            >text:last-child {
+              font-size: 26rpx;
+              color: #A0AEC0;
+            }
+          }
+        }
+
+        .status-text {
+          background: rgba(255, 107, 107, 0.1);
+          color: #FF6B6B;
+          padding: 12rpx 24rpx;
+          border-radius: 32rpx;
+          font-size: 26rpx;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .goods-card {
+    .goods-item {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(103, 192, 144, 0.1);
+      border-radius: 36rpx;
+      padding: 40rpx;
+
+      .info-box {
+        >image {
+          width: 100rpx;
+          height: 100rpx;
+          border-radius: 24rpx;
+          margin-right: 20rpx;
+        }
+
+        .text-info {
+          >text:first-child {
+            font-size: 32rpx;
+            font-weight: 500;
+            color: #2D3748;
+            margin-bottom: 4px;
+          }
+
+          >text:last-child {
+            font-size: 26rpx;
+            color: #A0AEC0;
+          }
+        }
+      }
+
+      .status-text {
+        padding: 12rpx 24rpx;
+        border-radius: 32rpx;
+        font-size: 26rpx;
+        font-weight: 500;
+      }
+
+      .warning-text {
+        color: #FF6B6B;
+      }
+
+      .expired-text {
+        color: #A0AEC0;
+      }
+    }
+  }
+}

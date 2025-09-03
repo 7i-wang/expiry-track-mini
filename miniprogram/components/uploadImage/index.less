@@ -1,0 +1,36 @@
+.upload-image-comp {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .upload-btn {
+    width: 150rpx;
+    height: 150rpx;
+    border: 2px dashed rgba(103, 192, 144, 0.2);
+    border-radius: 16rpx;
+
+    >image {
+      width: 80rpx;
+      height: 80rpx;
+    }
+  }
+
+  .preview-item {
+    position: relative;
+    width: 154rpx;
+    height: 154rpx;
+
+    >image:first-child {
+      width: 100%;
+      height: 100%;
+      border-radius: 16rpx;
+    }
+
+    >image:last-child {
+      position: absolute;
+      top: -16rpx;
+      right: -16rpx;
+      width: 32rpx;
+      height: 32rpx;
+    }
+  }
+}

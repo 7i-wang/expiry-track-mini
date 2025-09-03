@@ -1,0 +1,11 @@
+<view class="category-scroll-comp">
+  <view wx:for="{{list}}" wx:key="key" data-key="{{item.key}}" class="list-item flex-column-center justify-center hide-scroll-x" style="background: {{currentKey == item.key && '#67C090'}};" bindtap="handleClick"
+  >
+    <image 
+        src="{{currentKey == item.key ? item.selectedIcon : item.icon}}" 
+        mode="widthFix" 
+        class="icon"
+      ></image>
+    <text style="color: {{currentKey == item.key && '#fff'}};">{{item.name}}</text>
+  </view>
+</view>

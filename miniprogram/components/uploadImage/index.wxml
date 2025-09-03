@@ -1,0 +1,9 @@
+<view class="upload-image-comp">
+  <view wx:if="{{innerFileList.length < count}}" class="upload-btn flex-center" bindtap="uploadImage">
+    <image src="/images/icons/plus-selected.svg" mode="" />
+  </view>
+  <view class="preview-item" wx:for="{{innerFileList}}" wx:key="index">
+    <image src="{{item}}" mode="aspectFill" />
+    <image src="/images/icons/delete.svg" mode="aspectFill" bindtap="hanldeDelete" data-file="{{item}}" />
+  </view>
+</view>

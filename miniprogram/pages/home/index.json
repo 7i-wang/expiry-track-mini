@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "card": "/components/card/index",
+    "category-scroll": "/components/categoryScroll/index",
+    "add-goods-popup": "/components/addGoodsPopup/index",
+    "floating-ball": "/components/floatingBall/index"
+  }
+}
